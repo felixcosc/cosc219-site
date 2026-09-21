@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+</head>
+<body>
+    <header><h1>Contact Us</h1></header>
+    <main>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="reason">Contact Reason:</label>
+            <select id="reason" name="reason">
+                <option value="info">Information</option>
+                <option value="support">Support</option>
+                <option value="feedback">Feedback</option>
+            </select>
+
+            <p>Best form of return contact</p>
+            <input type="radio" id="emailreturn" name="returncontact" value="email">
+            <label for="emailreturn">Email</label>
+            <input type="radio" id="textreturn" name="returncontact" value="text">
+            <label for="textreturn">Text</label>
+            <input type="radio" id="phonereturn" name="returncontact" value="phone">
+            <label for="phonereturn">Phone</label>
+            <br>
+            <input type="checkbox" id="emailupdates" name="emailupdates" value="checked">
+            <label for="updates">Send me website updates and communications</label> 
+            <br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message"></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+
+
+
+    </main>
+    <hr>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <footer>
+        <p>© 2026 COSC 219 Website</p>
+    </footer>
+</body>
+</html>
