@@ -17,6 +17,8 @@ In this lab, I focused on styling and building a clean looking contact form. Thi
 
 I kept it visually simple, aside from giving each page its own header color to make them visually distinct. I played colors very carefully as far as hover, focus etc.
 
+NOTE: I did define a visual style for h3 in my style sheet which is a custom property not defined, but it is one I plan to use going forward on building my website. 
+
 ### AI Use Declaration
 I used chatGPT to help explain HTML elements to further my understanding so I implemented them properly. When I was unable to understand an error being thrown up with a paragraph crossing over with a list, I used chatGPT to identify this for me and explain why I cannot do this. I did not use chatGPT to do my assignment for me in other way, only as an information tool.
 
