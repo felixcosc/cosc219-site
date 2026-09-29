@@ -72,3 +72,13 @@ button:focus {
     outline: 2px solid blue;
     outline-offset: 2px;
 }
+fieldset {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid #999;
+    border-radius: 0.25rem;
+}
+legend {
+    padding: 0 0.5rem;
+    font-weight: bold;
+}
