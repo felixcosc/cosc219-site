@@ -36,7 +36,7 @@ nav ul {
         grid-template-columns: repeat(2, 1fr);
     }
 }
-@media (min-width: 58rem) {
+@media (min-width: 50rem) {
     .cards {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -55,10 +55,11 @@ nav ul {
 .about-layout aside {
     align-self: start;
 }
-.about-layout img {
+img {
     max-width: 100%;
     height: auto;
 }
+
 
 body {
     color: navy;
