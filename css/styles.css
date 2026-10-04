@@ -14,8 +14,15 @@ main {
   --space:  1rem;
 }
 
-nav a { 
+nav { 
     color: var(--brand); 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav ul {
+    display: flex;
+    gap: 1rem;
 }
 
 body {
