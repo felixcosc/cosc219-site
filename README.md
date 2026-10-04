@@ -19,6 +19,12 @@ I kept it visually simple, aside from giving each page its own header color to m
 
 NOTE: I did define a visual style for h3 in my style sheet which is a custom property not defined, but it is one I plan to use going forward on building my website. 
 
+## Lab 3 additions
+min-width 50rem: 3rd card begins to be cut off, meaningful to bump it down once the page drops below 50rem
+min-width 38rem: 2nd card begins to word wrap in an unpleasant way, meaningful to move 2nd card down once the page drops below 38rem
+
+I utilized flexbox specifically for my nav on each page as it only generally functions in one direction. I used grid for all of the cards as they function more off both rows and columns, which was ideal when shrinking the page visually.
+
 ### AI Use Declaration
 I used chatGPT to help explain HTML elements to further my understanding so I implemented them properly. When I was unable to understand an error being thrown up with a paragraph crossing over with a list, I used chatGPT to identify this for me and explain why I cannot do this. I did not use chatGPT to do my assignment for me in other way, only as an information tool.
 
