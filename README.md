@@ -25,8 +25,14 @@ min-width 38rem: 2nd card begins to word wrap in an unpleasant way, meaningful t
 
 I utilized flexbox specifically for my nav on each page as it only generally functions in one direction. I used grid for all of the cards as they function more off both rows and columns, which was ideal when shrinking the page visually.
 
+## Lab 4 additions
+The game processes valid input, rejecting invalid input, tracks guessed words and manages lives so the player can guess the word with the highest score possible, while staying above 0 lives.
+0 || "fallback" surprised me the most, I assumed it would be true not realizing 0 would result in false, resulting in the fallback.
+
+
 ### AI Use Declaration
 I used chatGPT to help explain HTML elements to further my understanding so I implemented them properly. When I was unable to understand an error being thrown up with a paragraph crossing over with a list, I used chatGPT to identify this for me and explain why I cannot do this. I did not use chatGPT to do my assignment for me in other way, only as an information tool.
 
 Lab 2 addendum: I used chatGPT to help with color suggestions. Visuals are an extremely hard thing to understand for me with web design and I hope to grow it more, I utilized it to ask if my color choices made sense for a website and did not bring it down visually (I know is not necessarily the focus right now, but I really want everything to look visually happy, but also like its personalized.)
 
+Lab 4 addendum: I used chatGPT to further explain some concepts I was not fully understanding and look over my written code to make sure it made sense before I proceeded to the next step.
