@@ -105,7 +105,11 @@ function isCorrect(letter, word) {
    ---------------------------------------------------------------------- */
 
 function livesAfterGuess(lives, correct) {
-
+   if(correct){
+      return lives;
+   } else {
+      return Math.max(0, lives - 1);
+   }
 }
 
 
@@ -120,8 +124,8 @@ function livesAfterGuess(lives, correct) {
    scoreFor("otter")     →  80
    ---------------------------------------------------------------------- */
 
-function scoreFor(word, lives) {
-
+function scoreFor(word, lives = STARTING_LIVES) {
+   return (word.length * 10) + (lives * 5);
 }
 
 
