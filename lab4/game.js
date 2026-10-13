@@ -30,9 +30,9 @@ const STARTING_LIVES = 6;
 
 function normalizeGuess(input) {
    let guess = input.trim().toLowerCase();
-   if(guess.length === 1){
+   if(guess.length === 1 && guess >= "a" && guess <= "z"){
       return guess;
-   } else{
+   } else {
       return "";
    }
 }
@@ -48,12 +48,10 @@ function normalizeGuess(input) {
    ---------------------------------------------------------------------- */
 
 function isValidGuess(input) {
+   const guess = normalizeGuess(input);
    const alphabet = "abcdefghijklmnopqrstuvwxyz";
-   if(alphabet.includes(input) && input.length === 1){
-      return true;
-   } else {
-      return false;
-   }
+   return alphabet.includes(guess) && guess.length === 1;
+   
 }
 
 
@@ -87,10 +85,9 @@ function alreadyGuessed(letter, guessedLetters) {
    ---------------------------------------------------------------------- */
 
 function isCorrect(letter, word) {
-   let convertedLetter = letter.toLowerCase();
-   let convertedWord = word.toLowerCase();
+   const guess = normalizeGuess(letter);
 
-   return convertedWord.includes(convertedLetter);
+   return guess !== "" && word.toLowerCase().includes(guess);
 }
 
 
@@ -146,7 +143,7 @@ function scoreFor(word, lives = STARTING_LIVES) {
    ---------------------------------------------------------------------- */
 
 function statusMessage(word, guessedLetters, lives) {
-   if (lives == 0){
+   if (lives <= 0){
       return `Out of lives. The word was "${word}".`;
    }
    else if (hasWon(word, guessedLetters)) {
