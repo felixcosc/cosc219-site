@@ -194,3 +194,10 @@ function revealWord(word, guessedLetters) {
 function hasWon(word, guessedLetters) {
   return !revealWord(word, guessedLetters).includes("_");
 }
+
+/*
+1. If the lines are swapped the lives would change before the letter was added to guessedLetters which could potentially break the code.
+
+2. isValidGuess is a safeguard to reject invalid input before processing, preventing doing unnecessary work to an input that may not even be processed.
+
+*/
