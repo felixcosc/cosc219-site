@@ -29,7 +29,7 @@
    ---------------------------------------------------------------------- */
 
 function revealWord(word, guessedLetters) {
-  word.split("").map(letter => guessedLetters.includes(letter) ? letter : "_").join("");
+  return word.split("").map(letter => guessedLetters.includes(letter) ? letter : "_").join("");
 }
 
 
@@ -44,7 +44,7 @@ function revealWord(word, guessedLetters) {
    ---------------------------------------------------------------------- */
 
 function hasWon(word, guessedLetters) {
-  word.split("").every(letter => guessedLetters.includes(letter))
+  return word.split("").every(letter => guessedLetters.includes(letter))
 }
 
 
@@ -59,7 +59,7 @@ function hasWon(word, guessedLetters) {
    ---------------------------------------------------------------------- */
 
 function trailNames(trails) {
-  trails.map(trail => trail.name);
+  return trails.map(trail => trail.name);
 }
 
 
@@ -69,7 +69,7 @@ function trailNames(trails) {
    ---------------------------------------------------------------------- */
 
 function openTrails(trails) {
-
+  return trails.filter(trail => !trail.closed);
 }
 
 
