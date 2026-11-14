@@ -5,8 +5,24 @@
 */
 
 // import TRAIL_DATA from ./data.js and TrailRegistry from ./registry.js
+import TRAIL_DATA from "./data.js";
+import { TrailRegistry } from "./registry.js";
 
+const registry = TrailRegistry.fromData(TRAIL_DATA);
+registry.find("Bear Creek").close();
 
+const listItems = registry.describeAll().map(description => {
+  const li = document.createElement("li");
+  li.textContent = description;
+  return li;
+});
+const list = document.getElementById("trails");
+for (const item of items) {
+  list.appendChild(item);
+}
+
+const summary = document.getElementById("summary");
+summary.textContent = `${registry.size} trails, ${registry.openTrails.length} open, ${registry.totalDistance} km total. Steepest: ${registry.steepest.name}.`;
 /* Build a registry from the data, close Bear Creek, then:
 
      · put one <li> per trail into #trails, using describeAll()

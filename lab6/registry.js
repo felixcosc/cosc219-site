@@ -45,7 +45,7 @@ export class TrailRegistry {
      ---------------------------------------------------------------- */
   add(trail) {
    if (!(trail instanceof Trail)) {
-      throw new TypeError ("Expected a Trail");
+      throw new TypeError("Expected a Trail");
    }
    this.#trails.push(trail);
    return this;
@@ -70,26 +70,38 @@ export class TrailRegistry {
 
   /* get openTrails — every trail that is not closed. */
   get openTrails() {
-
+   return this.#trails.filter(
+      trail => !trail.isClosed
+   );
   }
 
 
   /* get totalDistance — all the km added up, to one decimal place. */
   get totalDistance() {
-
+   return Number(
+      this.#trails.reduce(
+         (sum, trail) => sum + trail.km,
+         0
+      ).toFixed(1)
+   );
   }
 
 
   /* get steepest — the trail with the largest steepness.
      undefined when there are none. */
   get steepest() {
-
+   if (this.size === 0){
+      return undefined;
+   }
+   return this.#trails.reduce((best, current) =>
+      best.steepness > current.steepness ? best : current
+   ,  this.#trails[0]);
   }
 
 
   /* describeAll() — an array of every trail's describe() string. */
   describeAll() {
-
+   return this.#trails.map(trail => trail.describe());
   }
 
 
@@ -99,6 +111,27 @@ export class TrailRegistry {
      becomes a Trail. Default a missing gain to 0.
      ---------------------------------------------------------------- */
   static fromData(rows) {
-
-  }
+   const registry = new TrailRegistry();
+   for (const row of rows) {
+      let trail;
+      if ("surface" in row) {
+         trail = new BikeTrail(
+            row.name,
+            row.km,
+            row.rating,
+            row.gain ?? 0,
+            row.surface
+         );
+      } else {
+         trail = new Trail(
+            row.name,
+            row.km,
+            row.rating,
+            row.gain ?? 0
+         );
+      }
+      registry.add(trail);
+   }
+   return registry;
+}
 }
