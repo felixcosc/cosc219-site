@@ -79,7 +79,13 @@ export class Trail {
          →  { name: "...", km: 2.8, rating: "...", gain: 250, closed: false }
      ---------------------------------------------------------------- */
   toJSON() {
-
+   return {
+      name: this.name,
+      km: this.km,
+      rating: this.rating,
+      gain: this.gain,
+      closed: this.#closed
+   };
   }
 
 
@@ -91,7 +97,13 @@ export class Trail {
        Trail.fromObject({ name: "Z", km: 3, rating: "easy" }).gain  →  0
      ---------------------------------------------------------------- */
   static fromObject(obj) {
+   const { name, km, rating, gain = 0, closed = false } = obj;
+   const trail = new Trail(name, km, rating, gain);
 
+   if(closed){
+      trail.close();
+   }
+   return trail;
   }
 }
 
