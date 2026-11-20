@@ -32,6 +32,9 @@ The game processes valid input, rejecting invalid input, tracks guessed words an
 ## Lab 5 additions
 The report tells me that I successfully wrote and called all my functions properly. I was mostly trapped with understanding what exactly each method returned.
 
+## Lab 6 additions
+#trails is private so that it cannot be improperly modified outside of our methods we wrote, demonstrating proper data encapsulation. The first one in part A surprised me the most, I did not initially pick up on that they called from the same reference.
+
 ### AI Use Declaration
 I used chatGPT to help explain HTML elements to further my understanding so I implemented them properly. When I was unable to understand an error being thrown up with a paragraph crossing over with a list, I used chatGPT to identify this for me and explain why I cannot do this. I did not use chatGPT to do my assignment for me in other way, only as an information tool.
 
@@ -40,3 +43,5 @@ Lab 2 addendum: I used chatGPT to help with color suggestions. Visuals are an ex
 Lab 4 addendum: I used chatGPT to further explain some concepts I was not fully understanding and look over my written code to make sure it made sense before I proceeded to the next step.
 
 Lab 5 addendum: I used chatGPT the same way as above in Lab 4.
+
+Lab 6 addendum: Same as Lab 4 and 5. I also learned about the method toFixed(), which I do not believe we learned in class, which I utilized
