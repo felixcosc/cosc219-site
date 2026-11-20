@@ -35,7 +35,38 @@
    ---------------------------------------------------------------------- */
 
 export function createTrailItem(trail) {
-
+  const item = document.createElement("li");
+  item.classList.add("trail");
+  item.dataset.id = trail.id;
+  const nameSpan = document.createElement("span");
+  nameSpan.classList.add("trail-name");
+  nameSpan.textContent = trail.name;
+  item.append(nameSpan);
+  const kmSpan = document.createElement("span");
+  kmSpan.classList.add("trail-km");
+  kmSpan.textContent = `${trail.km} km`;
+  item.append(kmSpan);
+  const toggleButton = document.createElement("button");
+  toggleButton.type = "button";
+  toggleButton.dataset.action = "toggle";
+  const toggleLabel = document.createElement("span");
+  toggleLabel.classList.add("btn-label");
+  toggleLabel.textContent = trail.closed ? "Reopen" : "Close";
+  toggleButton.append(toggleLabel);
+  item.append(toggleButton);
+  const deleteButton = document.createElement("button");
+  deleteButton.type = "button";
+  deleteButton.dataset.action = "delete";
+  deleteButton.setAttribute("aria-label", `Delete ${trail.name}`);
+  const deleteLabel = document.createElement("span");
+  deleteLabel.classList.add("btn-label");
+  deleteLabel.textContent = "Delete";
+  deleteButton.append(deleteLabel);
+  item.append(deleteButton);
+  if(trail.closed) {
+    item.classList.add("is-closed");
+  }
+  return item;
 }
 
 
@@ -46,7 +77,8 @@ export function createTrailItem(trail) {
    ---------------------------------------------------------------------- */
 
 export function renderTrails(trails, container) {
-
+  const items = trails.map(trail => createTrailItem(trail));
+  container.replaceChildren(...items);
 }
 
 
@@ -60,5 +92,14 @@ export function renderTrails(trails, container) {
    ---------------------------------------------------------------------- */
 
 export function summaryText(trails) {
-
+  if(trails.length === 0){
+    return "No trails yet. Add one above.";
+  }
+  const totalCount = trails.length;
+  const openCount = trails.filter(trail => !trail.closed).length;
+  const totalKm = trails.reduce((total, trail) => {
+    return total + trail.km;
+  }, 0);
+  const trailWord = totalCount === 1 ? "trail" : "trails";
+  return `${totalCount} ${trailWord}, ${openCount} open, ${totalKm.toFixed(1)} km total.`;
 }
