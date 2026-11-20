@@ -35,6 +35,9 @@ The report tells me that I successfully wrote and called all my functions proper
 ## Lab 6 additions
 #trails is private so that it cannot be improperly modified outside of our methods we wrote, demonstrating proper data encapsulation. The first one in part A surprised me the most, I did not initially pick up on that they called from the same reference.
 
+## Lab 7 additions
+I use my event listener specifically on the list and not the buttons to not need to attach a new listener each time the list updates, as well as streamlining my code better. Not guarding against corrupt data could make the app crash on loadup causing issues with everything else, I used a try catch to make sure the JSON data is valid.
+
 ### AI Use Declaration
 I used chatGPT to help explain HTML elements to further my understanding so I implemented them properly. When I was unable to understand an error being thrown up with a paragraph crossing over with a list, I used chatGPT to identify this for me and explain why I cannot do this. I did not use chatGPT to do my assignment for me in other way, only as an information tool.
 
