@@ -48,3 +48,5 @@ Lab 4 addendum: I used chatGPT to further explain some concepts I was not fully 
 Lab 5 addendum: I used chatGPT the same way as above in Lab 4.
 
 Lab 6 addendum: Same as Lab 4 and 5. I also learned about the method toFixed(), which I do not believe we learned in class, which I utilized
+
+Lab 7 addendum: In trails.js I could not figure out how exactly you wanted me to generate an ID, so I asked chatGPT how to go about doing so and it provided me the method crypto.randomUUID() which generates a random one every time.
