@@ -20,7 +20,7 @@ Copy the block as many times as you need.
 **Fix** — Added event.preventDefault() before apply().
 
 
-**Lecture** — To review.
+**Lecture** — JavaScript
 
 
 ---
@@ -39,121 +39,121 @@ Copy the block as many times as you need.
 **Fix** — Changed both loose equality converters to strict.
 
 
-**Lecture** To review.
+**Lecture** JavaScript
 
 
 ---
 
 ## Fault 3
 
-**Symptom**
+**Symptom** — Observed trails not sorting from shortest length to longest, which is a priority as opposed to alphabetical by default.
 
 
-**How I found it**
+**How I found it** — Moved down to looking at my base results next and noticed there was zero sorting.
 
 
-**Cause**
+**Cause** — sort() without a proper comparison sorts elements as strings.
 
 
-**Fix**
+**Fix** Adjusted to using [trails...].sort((a, b) => a.km - b.km) to sort in ascending order without modifying the original array.
 
 
-**Lecture**
+**Lecture** JavaScript
 
 
 ---
 
 ## Fault 4
 
-**Symptom**
+**Symptom** — The trail names could be interpreted as HTML due to innerHTML implementation.
 
 
-**How I found it**
+**How I found it** — Going through the functions I noticed that as an issue due to the use of innerHTML with the data.
 
 
-**Cause**
+**Cause** — Potential XSS vulnerability.
 
 
-**Fix**
+**Fix** — Created spans with document.createElement() and textContent for the names and km.
 
 
-**Lecture**
+**Lecture** — JavaScript
 
 
 ---
 
 ## Fault 5
 
-**Symptom**
+**Symptom** — Improper HTML heading tags.
 
 
-**How I found it**
+**How I found it** — The block used h1 and h3 but no h2.
 
 
-**Cause**
+**Cause** — Makes the code structure more confusing.
 
 
-**Fix**
+**Fix** Changed h3 to h2.
 
 
-**Lecture**
+**Lecture** HTML
 
 
 ---
 
 ## Fault 6
 
-**Symptom**
+**Symptom** — No matching label for tag to connect to the search.
 
 
-**How I found it**
+**How I found it** — Compared the search input with the rating one to see if they matched.
 
 
-**Cause**
+**Cause** — The search input was missing a label marker.
 
 
-**Fix**
+**Fix** — Added a label marker to associate with the input ID.
 
 
-**Lecture**
+**Lecture** — HTML
 
 
 ---
 
 ## Fault 7
 
-**Symptom**
+**Symptom** — No border-box within css stylesheet.
 
 
-**How I found it**
+**How I found it** — Noticed in the #search block, the code was manually setting sizing without border-box, which would have given improper sizing.
 
 
-**Cause**
+**Cause** — Will make sizing improper from intent.
 
 
-**Fix**
+**Fix** — Added a * block for box-sizing: border-box;
 
 
-**Lecture**
+**Lecture** — CSS
 
 
 ---
 
 ## Fault 8
 
-**Symptom**
+**Symptom** — Keyboard focus was invisible.
+
+ 
+**How I found it** — Checker, as well as my understanding of how focus works.
 
 
-**How I found it**
+**Cause** — outline: none; makes it so there is zero outline when you keyboard focus.
 
 
-**Cause**
+**Fix** — Added 2px solid black to give it visible focus.
 
 
-**Fix**
-
-
-**Lecture**
+**Lecture** — CSS
 
 
 ---
@@ -161,7 +161,7 @@ Copy the block as many times as you need.
 ## One more thing
 
 **Which fault took you longest, and why?**
-
+Fault 4 for sure, remembering how to go about fixing the innerHTML properly.
 
 **Which one would you never have found without the checker?**
-
+I would never have found Fault 4 or 7 without the checker.
