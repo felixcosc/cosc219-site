@@ -21,7 +21,7 @@ export function matches(trail, search, rating) {
 
 
 export function sortByDistance(trails) {
-  return trails.sort();
+  return [...trails].sort((a, b) => a.km - b.km);
 }
 
 
